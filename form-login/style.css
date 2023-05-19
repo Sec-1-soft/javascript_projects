@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f3efefc1;
+}
+
+.form-frame {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-frame{
+    height:100dvh;
+}
+
+#title{
+    text-align:center;
+    color:#fff;
+    text-shadow:1px 0px 3px #999 ,-2px 0px 2px rgb(0, 179, 255),-2px 1px 1px rgb(54, 238, 54);
+}
+
+.inputs{
+    border:1px solid #d2cbcbad;
+    border-radius:10px;
+    height:auto;
+    box-shadow:0px 0px 3px 1px #dfd9d9;
+    background:white;
+}
+
+.inputs > table{
+    padding:10px;
+    margin:10px;
+    
+}
+
+#username,#password{
+    font-size:20px;
+    animation:changeColor 10s infinite;
+    outline:none;
+    border:0px;
+    border-radius:10px;
+    padding:5px;
+    box-shadow:0 0 5px 1px rgb(33, 158, 230);
+    transition:transform 0.5s ease;
+}
+
+
+#username:focus,#password:focus{
+    transform:scale(1.03);
+}
+
+
+
+#username,#password::placeholder{
+    color:rgb(33, 158, 230);
+}
+
+
+
+
+#login{
+    width:100%;
+    padding:10px;
+    border:0px;
+    border-radius:20px;
+    background:rgb(33, 158, 230);
+    color:#fff;
+    cursor:pointer;
+    transition:transform 0.5s ease;
+}
+
+#login:hover{
+    transform:scale(1.03)
+}
+
