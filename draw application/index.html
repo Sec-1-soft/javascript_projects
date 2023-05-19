@@ -1,0 +1,51 @@
+<canvas id="canvas" width="500" height="500" style="border:1px solid #999;box-shadow:0px 1px 1px 1px #57535356"></canvas>
+
+<button onclick="clearCanvas()">Temizle</button>
+<input type="color" id="colorPicker" value="#000000">
+<button onclick="saveCanvas()">Kaydet</button>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  let isDrawing = false;
+  let lastX, lastY;
+
+  canvas.addEventListener('mousedown', startDrawing);
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', stopDrawing);
+  canvas.addEventListener('mouseout', stopDrawing);
+
+  function startDrawing(event) {
+    isDrawing = true;
+    [lastX, lastY] = [event.offsetX, event.offsetY];
+  }
+
+  function draw(event) {
+    if (!isDrawing) return;
+    context.strokeStyle = document.getElementById('colorPicker').value;
+    context.lineWidth = 2;
+    context.lineCap = 'round';
+
+    context.beginPath();
+    context.moveTo(lastX, lastY);
+    context.lineTo(event.offsetX, event.offsetY);
+    context.stroke();
+
+    [lastX, lastY] = [event.offsetX, event.offsetY];
+  }
+
+  function stopDrawing() {
+    isDrawing = false;
+  }
+
+  function clearCanvas() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function saveCanvas() {
+    const link = document.createElement('a');
+    link.download = 'canvas.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }
+</script>

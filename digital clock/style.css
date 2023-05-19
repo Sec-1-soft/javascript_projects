@@ -1,0 +1,13 @@
+#dijital{background:#222;
+    max-width:100%;
+    min-width:100px;
+    padding:30px;
+    font-size:50px;
+    margin:auto;
+     text-align:center;
+     color:#fff;
+     border:5px double #5FF;
+     position:absolute;
+     top:30%;
+     left:40%;
+}

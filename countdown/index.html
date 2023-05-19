@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            padding:10px;
+            margin:0px;
+            text-align:center;
+            background:rgba(13, 46, 213, 0.508);
+            color:#fff;
+            font-family:arial;
+        }
+
+    #frame{
+        border:1px solid #999;
+        width:300px;
+        text-align:center;
+        align-content:center;
+        margin:auto;
+        margin-top:100px;
+        border-radius:10px;
+    }
+</style>
+</head>
+<body>
+    <header>
+    <h1>Sayac</h1>
+    </header>
+    <div id="frame">
+        <div>
+            <h3>Doğum Tarihini Gir</h3>
+        </div>
+        <div>
+            <input type="datetime-local" id="bornDate">
+            <button onclick="hesapla()">Hesapla</button>
+        </div>
+        <div>
+            <br>
+            <legend>KALAN:</legend>
+             <br>
+            <div>
+                 <table  cellpadding=10 style="margin-left:20px;border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;">
+                    <tr>
+                        <td id="gn"></td>
+                        <td>Gün</td>
+                    </tr>
+                    <tr>
+                        <td id="st"></td>
+                        <td>Saat</td>
+                    </tr>
+                    <tr>
+                        <td id="dk"></td>
+                        <td>Dakika</td>
+                    </tr>
+                    <tr>
+                        <td id="sn"></td>
+                        <td>Saniye</td>
+                    </tr>
+                 </table>
+            </div>
+        </div>
+    </div>
+    <audio style="display:none" id="audio">
+     <source src="music.mp3" type="audio/mp3">
+    </audio> 
+    <button id="kapat" style="display:none">ALARMI KAPAT</button>
+    <script>
+        function hesapla(){
+            var zmn=setInterval(ZAMAN,1000);
+function ZAMAN(){
+            let born = document.getElementById("bornDate").value;
+let bornDt = new Date(born);
+let nowDt = new Date();
+let remTime = bornDt - nowDt;
+
+let audio = document.getElementById("audio");
+let kapat = document.getElementById("kapat");
+if(remTime<0){
+    clearInterval(zmn);
+    audio.play();
+    kapat.style.display="block";
+    kapat.onclick=()=>{
+        audio.pause();
+        audio.currentTime=0
+    }
+    return 0;
+}
+
+
+
+let Gun = Math.floor(remTime / 1000 / 60 / 60 / 24);
+let saat = Math.floor((remTime / (1000 * 60 * 60)) % 24);
+let dakika = Math.floor((remTime / (1000 * 60)) % 60);
+let saniye = Math.floor((remTime / 1000) % 60);
+     
+            let rem ={
+                "Gün":Gun,
+                "Saat":saat,
+                "Dakika":dakika,
+                "Saniye":saniye,
+            }
+            document.getElementById("gn").innerHTML=rem["Gün"];
+            document.getElementById("st").innerHTML=rem["Saat"];
+            document.getElementById("dk").innerHTML=rem["Dakika"];
+            document.getElementById("sn").innerHTML=rem["Saniye"];
+
+        
+        
+        }
+    }
+    </script>
+</body>
+</html>

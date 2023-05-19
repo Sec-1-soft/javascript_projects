@@ -1,0 +1,73 @@
+body{
+    background-image:url("arka.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position: center;
+}
+
+
+header{
+    background:rgba(69, 151, 244, 0.5);
+    margin-top:0px;
+    padding:10px;
+    text-align:center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-bottom:1px solid #c9d5da;
+    box-shadow:1px 1px 2px #4569798e;
+    border-radius:5px;
+}
+
+header > h1{
+   font-weight:300;
+   text-shadow:1px 1px 1px grey;
+   color:#fff;
+}
+
+#weather_search_view{
+    width:auto;
+    padding-top:20px;
+    padding-bottom:20px;
+    background:rgba(183, 182, 194, 0.285);
+    margin-top:20px;
+    padding-left:5%;
+    border-radius:5px;
+    box-shadow:1px 1px 3px grey;
+}
+
+#weather_search_bar{
+    width:90%;
+    font-size:30px;
+    border-radius:5px;
+    box-shadow:1px 1px 2px grey;
+    outline:0px;
+    background:rgba(183, 182, 194, 0.584);
+    color:#2833378e
+}
+
+
+#weather_data_frame{
+    margin:auto;
+    width:400px;
+    background: #d6cdcd38;
+    margin-top:20px;
+    padding-top:45px;
+    padding-bottom:45px;
+    border-radius:5px;
+    box-shadow:1px 1px 3px rgb(170, 168, 168);
+}
+
+#weather_data_table{
+    margin:auto;
+    padding:10px;
+    width:300px;
+    border-radius:5px;
+    font-family:Arial, Helvetica, sans-serif;
+    text-shadow:1px 1px 1px rgb(216, 211, 211);
+}
+
+@media screen and (max-width:600px){
+    #weather_data_frame{
+        width:100%;
+    }
+}

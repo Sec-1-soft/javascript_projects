@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Net</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 id="title">WORD NET</h2>
+    </header>
+    <nav>
+        <ul id="list">
+            <li>
+                <legend>Başlık</legend>
+                <select id="titleSize">
+                    <option>10px</option>
+                    <option>12px</option>
+                    <option>15px</option>
+                    <option>18px</option>
+                    <option>22px</option>
+                    <option>25px</option>
+                    <option>30px</option>
+                    <option>40px</option>
+                    <option>48px</option>
+                    <option>52px</option>
+                </select>
+            </li>
+            <li>
+                <legend>Metin</legend>
+                <select id="textSize">
+                    <option>10px</option>
+                    <option>12px</option>
+                    <option>15px</option>
+                    <option>18px</option>
+                    <option>22px</option>
+                    <option>25px</option>
+                    <option>30px</option>
+                    <option>40px</option>
+                    <option>48px</option>
+                    <option>52px</option>
+                </select>
+            </li>
+            <li>
+                <legend>Başlık</legend>
+                <input type="color" id="titleColor">
+            </li>
+            <li>
+                <legend>Yazı</legend>
+                <input type="color" id="textColor">
+            </li>
+            <li>
+                <legend>Yazı ailesi</legend>
+                <select id="family">
+                    <option>Arial</option>
+                    <option>Verdana</option>
+                    <option>Times</option>
+                    <option>Impact</option>
+                    <option>Cambria</option>
+                    <option>Georgia</option>
+                    <option>sans-serif</option>
+                    <option>Geneva</option>
+                    <option>Helvetica</option>
+                    <option>monospace</option>
+                </select>
+            </li>
+            <li>
+                <button id="save">Kaydet</button>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <input id="title-area" type="text" placeholder="Title Area">
+        <textarea id="text" placeholder="Enter a Text"></textarea>
+    </section>
+    <script src="command.js"></script>
+</body>
+</html>

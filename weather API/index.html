@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu</title>
+    <link rel="stylesheet" href="st.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="günes.jpg">
+</head>
+<body>
+    <header>
+        <h1>HAVA DURUMU</h1>
+    </header>
+    <div id="weather_search_view">
+      <input type="search" id="weather_search_bar" placeholder="Bir Yer Ara">
+      <button id="weather_search_icon" style="padding:2px;height:40px;background:transparent;border:0px"><i class="fa fa-search" style="font-size:26px;margin-left:2px;cursor:pointer"></i></button>
+      <br>
+    </div>
+    <div id="weather_data_frame">
+        <div style="margin:auto;width:90%">
+            <table id="weather_data_table" cellpadding=20px>
+                <tr>
+                    <td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABdklEQVR4nM2VOUsDURSFPzAgLoVLIRJcqmjlL3DvFZfKFP4CTSf2gnYGe9FfoLi0tkFjIaZVsVAQG/e4FIIjD86E4TGJkzciHrgw8+5559y3wz9ALZAB8sCrwnzPKxcLSaAAeGXiVBznygsVxIMmTiPJhIi9KOz2OReDY0tkFagBEkDWyh25GBStyo2wj0RIvmo8VWHw6GJwaE1DVsIm1qxczsVgMWQxi1blfiy4GDRp6D9t02egGUcsRzBYIgZagYcK4vdACzExW8EgzS9hJ0R8P45gAzAJDOi/HbgNiN8Abcr1AxNAfRThTmATeJfQXSA3BHwqfGO0Dob7BqwDHeXEB62L7ASYsTgjwLDVlhY3uG2DBZRwLcIukKJ6pIA9aVyFES6V3AJ6HAx6gW1pXIQRRjU8Q/jS/bICjAF9ernqFEm1jYuTUx9Pl6Q9jSV0a5E/IpxgzwqzMTaArijDbQSm9cgcAOc60f4uMt9nyhnOlPr8Pb4B+Jq4Zaa25DQAAAAASUVORK5CYII="> Konum:</td>
+                    <td id="weather_data_location"></td>
+                </tr>
+                <tr>
+                    <td><img width=30 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACGklEQVR4nO2aTUtUURjHf5uwQEywxeQLSYrM3vIjJNhEGwnKRW4zwXxpWd8hSChF3IVotVKXEfUNXAQui6CFLcoWvnvlgf/ARWgaZs6cc7pzf/DAcO9z/uecO89znnvvudAYhoBlYAv4JdvSsZv8JzwHToHkL2bnnhE5dzXYI+AlMAi0y24A8zpnPneImI8a5KMKPhPy+UDE/NYg2yr4XJaP5U20JDJXfsHIJxIbSdZCK6nBPpORiXwiIjIXWk03kST2HPkXeY74oqlypCUrOXIhzxGP5DlCniONoalCKzMTacnriCc6aggtaxMVw8APDe5rFf7f5GttbhEJ46nXoO+AniramM/71OvVhwSmBBzrxfSTGtpPq61NZoRAXAV+6qpO1aEzLY0doEAAljSAtw60ymG2iGd6FA57wDUHer3APnAIdOKRp7qCbxxqrkhzBo9sqtNRh5r3pLmOR76rUwsJV1yXptUYb+yp04sONS9J07S9satOWx1q2i5Xol0vb2yr0wGHmkVpfiFAst93qDkWItkfq1NbMl2xWsWOsHO6VRAPtNrUS7+0joAuPLPQgFuUVwSgM7V6zdahM5fady8QCPsM40S38rM1TuJYGrcJzKQGUn6w6qsyJ8rhdKLFIwpKqc83DrQCPVBtaJUVtcSu6S63HE7B/4nzXAFepB57K5n5vNbDWbR0qRZsqEr/kdlvK3Z2zvkSewb8lSIbNllRawAAAABJRU5ErkJggg==">Sıcaklık:</td>
+                    <td id="weather_data_temp"></td>
+                </tr>
+                <tr>
+                    <td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABVElEQVR4nO3UzSqmYRgH8J+INEmzUpRRnMJoGkLEwmIWNuMELK1sh2YWcwjkCHzsJO8JkJVsHAHJzsJHM43CMz11vXWn93m8eEvKv666r4/7f33cH7zjLaALP3CIC/zBEX6j+6XkMzhHViCXmH0u+TfcBlEFE/iIDxjDVvju8b1e0lFs4iw2Zlgqif+VdJKPshAtWK0xgm00lexriu6ySFaIKnl+gIvoR3MkfgzjyahOgutTGjCSkH8pINnHXoHejrsHnV9jqhq8Eca88iLsYbdE74lEn7ETfFfoEweaxVgahZ3gzMflJpTWkg3zmEZnyHTYijAYnCf1dDBX8tByXy10hP9frqw/ct/bsICD+CouYr0QvrIOjnNlOJS/+KoxqATnStWwnCT5iYF4B09Ba1ReSV53b9XZkiRphFxislYVQ1jDafLRZXXKbdyalbTyd7w+/gOfaoiCWB6ZjgAAAABJRU5ErkJggg=="> Bulutluluk:</td>
+                    <td id="weather_data_cloud"></td>
+                </tr>
+                <tr>
+                    <td><img width="25" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACE0lEQVR4nO2Zv0tcQRDHP+KPQk1/WqrY5ZLCMxoDRk2ffyOkC6iFaWwUrHLaqBGsIoIggaSxkCuUJIV2ITlsjaCIGlBRORMTFuZgWN67e6fo7pP3gWlud7jvzJudnXcHCQkJCfeNF8AcsAWciuWB98AAHtMKrAH/ylgOaMMzngG/I4gv2qH4eEE7cKTEnQPvgAzQINYJZGWtuO9AnppzckrUNpAusTcte3Q5OaVPibkAHkbwScveol8/DplXQiYr8JtUfrM45LsSYuo8Kk+UXx6HFDvPJVBfgd8DFcAxDhkVARMV+nkTwHXpUgH8JIZMqQBmiBmPrDbaR8zE/1LiV4kBjVLzU1bmzSjRErC/F1gCdoECsAMsAj3lvmjcmlVu0w4CBFUD02X8TBJqgsRXASd3JH41JPOzEf1NEIGM3dITMIn5Id0m7MA+t3yWgccyyXYAn9TaFfAUz1iyxJuKsNFBLOAZW0qc6VRBdKg9ppN5xRvgTN6lo4wfppvFjozPTyAKH1UAH4gJdZL5z1YX6nZ9kd3Esq4vsuvalYg3N/adXmQ3sT9yYBfCysY1TcCgNeS9JIYMqQBW8JC3csbCfnppVgHs4yF7Iu6vlE2pAI7xkHUlcCRgfVitf8VDXimBBan5lGR+2DrEr/EQ8xa1EaFtbgK1eEpKBJYS30QMZhtTIt/kr6cT4It85m3mExISEgjlP3XTlye2O3h8AAAAAElFTkSuQmCC"> Rüzgar Hızı:</td>
+                    <td id="weather_data_wind"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="komut.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+#cerceve{
+    width:399px;
+    height:560px;
+    border:1px solid black;
+    margin:70px auto;
+    box-shadow:1px 1px 5px 1px rgb(164, 173, 173);
+  }
+  
+  
+  #girdi{
+    width:100%;
+    height:100px;
+    margin:auto;
+  }
+  #girdi input{
+    width:324px;
+    font-size:81px;
+    border:0px;
+    border-right:1px solid #999;
+    outline:0px;
+  }
+  #button{
+    margin:auto;
+  }
+  #button button{
+    display:block;
+    float:left;
+    width:80px;
+    height:50px;
+    margin:21px;
+    border-radius:5px;
+    border:1px solid #777;
+    box-shadow:2px 2px 2px grey;
+    transition-duration:300ms;
+    
+  }
+  
+  #cerceve{background:#444}
+  
+  #button button:hover{
+    transform:translateY(10px);
+    box-shadow:2px 2px 2px #222;
+    cursor:pointer;
+  }

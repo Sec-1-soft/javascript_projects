@@ -1,0 +1,14 @@
+#speak{
+    font-size:30px;
+    width:300px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#btn{
+    border:0px;
+    border-radius:10px;
+    padding:6px 12px;
+    background-color: rgb(23, 141, 231);
+    color:#fff;
+    cursor:pointer;
+}

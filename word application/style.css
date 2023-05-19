@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    background-color:rgb(159, 79, 224);
+    padding:1px;
+    margin:-8px -8px 0px -8px;
+    color:#fff;
+}
+
+#title{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:300;
+    font-size: 20px;
+}
+
+#nav{
+    margin:0px -8px 0px -8px;
+    border:1px solid #999;
+
+}
+
+#list{
+    list-style-type: none;
+    padding:0px;
+    margin:0px -8px 0px -8px;
+}
+
+#list >li{
+    float: left;
+    width:16.66%;
+    border-right:1px solid #999;
+    background:#c6c1c1;
+}
+
+section{
+    clear: both;
+    border:1px solid #999;
+    height:100dvh;
+    margin:0px -8px 0px -8px;
+}
+
+
+#title-area{
+    width:100%;
+    font-size:30px;
+    border:0px;
+    outline:none;
+    text-align:center;
+}
+
+#text{
+    width:100%;
+    height: 686px;
+    margin:0px;
+    border:0px;
+    outline:none;
+    padding:10px;
+    resize: none;
+}
+
+#list >li>select,button{
+    width:100%;
+    padding:5px;
+    border:0px;
+    text-align: center;
+    cursor:pointer;
+}
+
+
+button{
+    padding:12.6px;
+}
+
+legend{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:13px;
+    text-align: center;
+    background-color: #ebe9e9;
+}
+
+#titleColor,#textColor{
+    height:26px;
+    width:100%;
+    border:0px;
+}
