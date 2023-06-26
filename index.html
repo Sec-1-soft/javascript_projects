@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <style>
+    div.quiz_frm{
+	  background:lightblue;
+	  width:400px;
+	  height:auto;
+	  border-radius:10px;
+	  padding:10px;
+	}
+	
+	div.quest_frm,div.opt_frm{
+	  width:350px;
+	  margin:10px auto;
+	  list-style-type:none;
+	  background:#fff;
+	}
+	
+	
+	
+  </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="container-fluid bg-success text-white p-3">
+	  <h1>Quiz Application</h1>
+	</header>
+	<section id="content">
+	
+	</section>
+	<script>
+	    let ctx = document.getElementById("content");
+	    const quiz_dict = {
+		  "ques_1":{
+		    question:"Güneş sistemindeki en büyük gezegen ?",
+			options : ["Merkür","Satürn","Jüpiter","Neptün"],
+			correct : "Jüpiter",
+		  },
+		  "ques_2":{
+		    question:"En büyük kara hayvanı",
+			options:["Aslan","Timsah","Deve","Fil"],
+			correct:"Fil",
+		  },
+		  "ques_3":{
+		    question :"Bal üreten hayvan hangisidir ?",
+			options:["Ayı","Arı","Karınca","Sinek"],
+			correct:"Arı",
+		  },
+		  "ques_4":{
+		    question : "Hangisi gökkuşağı rengi değildir ?",
+			options : ["Siyah","Sarı","Mavi","Turuncu"],
+			correct:"Siyah",
+		  },
+		  "ques_5":{
+		    question:"Ağaçlar hangi molekülü üretir ?",
+			options: ["Oksijen","Karbondioksit","Korbonmonoksit","Su"],
+			correct:"Oksijen",
+		  },
+		  "ques_6":{
+		    question:"20x30 işleminin sonucu kaçtır ?",
+			options: ["300","650","600","6000"],
+			correct : "600",
+		  },
+		}
+		
+		Object.values(quiz_dict).forEach((dict)=>{
+		   let div_frm = document.createElement("div");
+		   div_frm.className = "container mt-3 border quiz_frm";
+		   ctx.appendChild(div_frm);
+		   
+		   let question_frm = document.createElement("div");
+		   question_frm.className ="container p-2 border quest_frm";
+		   question_frm.textContent = dict.question;
+		   div_frm.appendChild(question_frm);
+		   
+		   let options_frm =document.createElement("div");
+		   options_frm.className = "container p-2 border opt_frm";
+		   div_frm.appendChild(options_frm);
+		   
+		   
+		   
+		   dict.options.forEach((opt)=>{
+		      let opt_li = document.createElement("li");
+			  opt_li.style.cursor = "pointer";
+			  opt_li.style.transitionDuration = "300ms";
+			  opt_li.className = "p-2 border-bottom";
+			  opt_li.textContent = opt;
+			  options_frm.appendChild(opt_li);
+			  
+			  opt_li.addEventListener("click",(event)=>{
+			   let allOptions = options_frm.querySelectorAll("li");
+               allOptions.forEach((option) => {
+                   option.style.background = "";
+                   option.style.color = "";
+                });
+				
+			  opt_li.style.background = "#fff";
+		      let selectedOpt = event.target;
+			  
+			   
+			  if(selectedOpt.textContent == dict.correct){
+			     opt_li.style.background = "green";
+				 opt_li.style.color = "#fff";
+			   }
+			   
+			   else{
+			    opt_li.style.background = "red";
+				opt_li.style.color = "#fff";
+			   }
+		   })
+		   })
+		})
+		
+		
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
